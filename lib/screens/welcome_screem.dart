@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/screens/home_Screen.dart';
 import 'package:myapp/widgets/rounded_button.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -8,10 +9,11 @@ class WelcomeScreen extends StatelessWidget {
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage("assets/images/Bitmap.png"),
-          fit: BoxFit.cover,
-        )),
+          image: DecorationImage(
+              image: AssetImage("assets/images/Bitmap.png"),
+              fit: BoxFit.cover,
+          )
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -33,7 +35,16 @@ class WelcomeScreen extends StatelessWidget {
               child: RoundedButton(
                 text: "start reading",
                 fontSize: 18,
-                press: () {},
+                press: () {
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return HomeScreen();
+                      }
+                    )
+                  );
+                },
               ),
             ),
           ],
